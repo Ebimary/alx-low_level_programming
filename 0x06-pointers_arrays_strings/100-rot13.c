@@ -1,28 +1,30 @@
 #include "main.h"
-/**
- * leet - encodes a string into 1337
- * @s: input string.
- * Return: the pointer dest.
- */
-char *leet(char *s)
-{
-	int count = 0, i;
-	int lower_case[] = {97, 101, 111, 116, 108};
-	int upper_case[] = {65, 69, 79, 84, 76};
-	int numbers[] = {52, 51, 48, 55, 49};
+#include <stdio.h>
 
-	while (*(s + count) != '\0')
+/**
+ * rot13 - encoder rot13
+ * @s: pointer to string params
+ *
+ * Return: *s
+ */
+char *rot13(char *s)
+{
+	int i;
+	int j;
+	char data1[] = 
+		"ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char datarot[] =
+		"NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (i = 0; i < 5; i++)
+		for (j = 0; j < 52; j++)
 		{
-			if (*(s + count) == lower_case[i] || *(s + count) ==
-					upper_case[i])
+			if (s[i] == data1[j])
 			{
-				*(s + count) = numbers[i];
+				s[i] = datarot[j];
 				break;
 			}
 		}
-		count++;
 	}
 	return (s);
 }
