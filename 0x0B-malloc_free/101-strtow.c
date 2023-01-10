@@ -21,15 +21,16 @@ int count_word(char *s)
 		if (flag == 0)
 		{
 			flag = 1;
-			w++;
+			flag = 1;
 		}
-		return (w);
 	}
+	return (w);
 }
 
 /**
- * **strtow - splits a string into words
+ * strtow - splits a string into words
  * @str: string to split
+ *
  * Return: pointer to an array of strings (Success)
  * or NULL (Error)
  */
@@ -70,3 +71,5 @@ char **strtow(char *str)
 	matrix[k] = NULL;
 	return (matrix);
 }
+
+
