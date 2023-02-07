@@ -251,7 +251,6 @@ void close_elf(int elf)
 				"Error: Can't close fd %d\n", elf);
 	exit(98);
 }
-}
 
 /**
  * main - Displays the information contained in the
